@@ -14,7 +14,7 @@ set -e
       echo '####           Logging in to AWS with eb-cli credentials          #####'
       echo '***********************************************************************'
       echo ''
-      eval "$(aws ecr get-login --profile eb-cli --region eu-west-1)"
+      eval "$(aws ecr get-login --profile eb-cli  --no-include-email --region eu-west-1)"
       echo ''
       echo '*****************************************************************************************************************************************************************************************************************'
       echo '          Building the command to run on the container'
@@ -44,7 +44,7 @@ set -e
       echo '####          Logging in to AWS with eb-cli credentials           #####'
       echo '***********************************************************************'
       echo ''
-      eval "$(aws ecr get-login --profile eb-cli --region eu-west-1)"
+      eval "$(aws ecr get-login --profile eb-cli  --no-include-email --region eu-west-1)"
       echo ''
       echo '*********************************************************************************************************************************'
       echo '             Building the command to run on the container'
