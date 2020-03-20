@@ -32,7 +32,7 @@
           }
         ],
         "essential": true,
-        "memory": 2000,
+        "memory": 200,
         "portMappings": [
           {
             "hostPort": 80,
@@ -40,13 +40,15 @@
           }
         ],
         "links": [
+            "db"
         ]
       },
       {
-        "name": "my_postgres",
+        "name": "db",
         "image": "postgres:11",
+        "container_name": "my_postgres",
         "essential": true,
-        "memory": 1000,
+        "memory": 100,
         "environment": [
             {
                 "name": "POSTGRES_PASSWORD",
