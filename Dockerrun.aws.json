@@ -24,7 +24,7 @@
           },
           {
             "name": "DOCKER_DB_HOST",
-            "value": "my_postgres"
+            "value": "db"
           },
           {
             "name": "SECRET_KEY_BASE",
