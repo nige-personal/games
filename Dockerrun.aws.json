@@ -46,7 +46,6 @@
       {
         "name": "db",
         "image": "postgres:11",
-        "container_name": "my_postgres",
         "essential": true,
         "memory": 100,
         "environment": [
