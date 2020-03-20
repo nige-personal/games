@@ -8,11 +8,11 @@
         "environment": [
           {
             "name": "AWS_ACCESS_KEY_ID",
-            "value": "AKIAIY66D2BZR2FRPERQ"
+            "value": ""
           },
           {
             "name": "AWS_SECRET_ACCESS_KEY",
-            "value": "504SOTQ679dymsnRd9AYcQTXlpcPBC+2YF7nGzS6"
+            "value": ""
           },
           {
             "name": "AWS_REGION",
