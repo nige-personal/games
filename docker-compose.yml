@@ -1,0 +1,35 @@
+version: '2'
+services:
+  app:
+    image: games
+    command: bash -c "RAILS_ENV=development bundle exec rake db:migrate db:create db:schema:load && RAILS_ENV=development bundle exec rails s -p 3000 -b '0.0.0.0'"
+    container_name: games_app
+    tty: true
+    stdin_open: true
+    environment:
+      - DOCKER_DB_HOST=my_postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ../games:/myapp
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    depends_on:
+      - db
+    networks:
+      default:
+        aliases:
+          - dev.games.com
+
+  db:
+    image: postgres:11
+    container_name: my_postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5432:5432
+    volumes:
+      - my_dbdata:/var/lib/postgresql/data
+volumes:
+  my_dbdata:
