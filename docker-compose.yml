@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     image: games
-    command: bash -c "RAILS_ENV=development bundle exec rake db:migrate db:create db:schema:load && RAILS_ENV=development bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "RAILS_ENV=development bundle exec rake db:create db:migrate && RAILS_ENV=development bundle exec rails s -p 3000 -b '0.0.0.0'"
     container_name: games_app
     tty: true
     stdin_open: true
