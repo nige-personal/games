@@ -7,26 +7,6 @@
         "image": "054960824384.dkr.ecr.eu-west-1.amazonaws.com/games:0.0.1",
         "environment": [
           {
-            "name": "AWS_ACCESS_KEY_ID",
-            "value": ""
-          },
-          {
-            "name": "AWS_SECRET_ACCESS_KEY",
-            "value": ""
-          },
-          {
-            "name": "AWS_REGION",
-            "value": "eu-west-1"
-          },
-          {
-            "name": "POSTGRES_PASSWORD",
-            "value": "password"
-          },
-          {
-            "name": "DOCKER_DB_HOST",
-            "value": "db"
-          },
-          {
             "name": "SECRET_KEY_BASE",
             "value": "0c64deb461266abb601d62b86780c92e8220f1e80fcaa2faa48a8005b7c4cf5dba4f921f5be0e288558a0c3f10ce23302bb54f593a19e7b6260cdd29ebb04760"
           }
@@ -40,25 +20,6 @@
           }
         ],
         "links": [
-            "db"
-        ]
-      },
-      {
-        "name": "db",
-        "image": "postgres:11",
-        "essential": true,
-        "memory": 100,
-        "environment": [
-            {
-                "name": "POSTGRES_PASSWORD",
-                "value": "password"
-            }
-        ],
-        "portMappings": [
-          {
-            "hostPort": 5432,
-            "containerPort": 5432
-          }
         ]
       }
     ]
