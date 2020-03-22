@@ -22,7 +22,7 @@ set -e
       echo $command
       echo '*****************************************************************************************************************************************************************************************************************'
       echo ''
-      docker build --build-arg APP_DIR=myapp --build-arg COMMAND="$command" -t=games .
+      docker build --build-arg APP_DIR=myapp --build-arg COMMAND="$command" -t=prod_games .
       echo ''
       echo ''
       echo '***********************************************************************'
@@ -52,7 +52,7 @@ set -e
       echo $command
       echo '*********************************************************************************************************************************'
       echo ''
-      docker build --build-arg APP_DIR=myapp --build-arg  COMMAND="$command" -t=games .
+      docker build --build-arg APP_DIR=myapp --build-arg  COMMAND="$command" -t=dev_games .
       echo ''
       echo ''
       echo '***********************************************************************'
