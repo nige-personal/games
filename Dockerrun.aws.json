@@ -4,7 +4,7 @@
     "containerDefinitions": [
       {
         "name": "myapp",
-        "image": "702275590140.dkr.ecr.eu-west-1.amazonaws.com/games:dev-0-0-1",
+        "image": "702275590140.dkr.ecr.eu-west-1.amazonaws.com/games:dev-0-0-2",
         "environment": [
           {
             "name": "SECRET_KEY_BASE",
