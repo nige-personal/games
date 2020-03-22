@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-    if [[ $@ == *"--production"* ]] ;then
+    if [[ $@ == *"--prod"* ]] ;then
     shopt -s nullglob
       files=(log/*)
       if (( ${#files[*]} )); then
@@ -9,12 +9,12 @@ set -e
         rm -r log/*
       fi
       shopt -u nullglob
-      echo ''
-      echo '***********************************************************************'
-      echo '####           Logging in to AWS with eb-cli credentials          #####'
-      echo '***********************************************************************'
-      echo ''
-      eval "$(aws ecr get-login --profile eb-cli  --no-include-email --region eu-west-1)"
+      # echo ''
+      # echo '***********************************************************************'
+      # echo '####           Logging in to AWS with eb-cli credentials          #####'
+      # echo '***********************************************************************'
+      # echo ''
+      # eval "$(aws ecr get-login --profile eb-cli  --no-include-email --region eu-west-1)"
       echo ''
       echo '*****************************************************************************************************************************************************************************************************************'
       echo '          Building the command to run on the container'
@@ -31,7 +31,7 @@ set -e
       echo ''
     fi
 
-    if [[ $@ == *"--development"* ]] ;then
+    if [[ $@ == *"--dev"* ]] ;then
       shopt -s nullglob
       files=(log/*)
       if (( ${#files[*]} )); then
@@ -39,12 +39,12 @@ set -e
         rm -r log/*
       fi
       shopt -u nullglob
-      echo ''
-      echo '***********************************************************************'
-      echo '####          Logging in to AWS with eb-cli credentials           #####'
-      echo '***********************************************************************'
-      echo ''
-      eval "$(aws ecr get-login --profile eb-cli  --no-include-email --region eu-west-1)"
+      # echo ''
+      # echo '***********************************************************************'
+      # echo '####          Logging in to AWS with eb-cli credentials           #####'
+      # echo '***********************************************************************'
+      # echo ''
+      # eval "$(aws ecr get-login --profile eb-cli  --no-include-email --region eu-west-1)"
       echo ''
       echo '*********************************************************************************************************************************'
       echo '             Building the command to run on the container'
