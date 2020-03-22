@@ -14,3 +14,10 @@ set -e
         docker push 702275590140.dkr.ecr.eu-west-1.amazonaws.com/games:dev-$2
       fi
     fi
+
+     if [[ $1 == *"--test"* ]] ;then
+      docker tag prod_games:latest 702275590140.dkr.ecr.eu-west-1.amazonaws.com/games:test-$2
+      if [[ $3 == *"--push"* ]] ;then
+        docker push 702275590140.dkr.ecr.eu-west-1.amazonaws.com/games:test-$2
+      fi
+    fi
