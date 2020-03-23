@@ -9,19 +9,27 @@ services:
     environment:
       - DOCKER_DB_HOST=my_postgres
       - POSTGRES_PASSWORD=password
+      - DOCKER_IP=172.18.0.1
     volumes:
       - ../games:/myapp
     ports:
       - "3000:3000"
     links:
       - db
+      - mail_server
     depends_on:
       - db
+      - mail_server
     networks:
       default:
         aliases:
           - dev.games.com
-
+  mail_server:
+    image: djfarrelly/maildev
+    container_name: pwpr_mail
+    ports:
+      - "1080:80"
+      - "1025:25"
   db:
     image: postgres:11
     container_name: my_postgres
